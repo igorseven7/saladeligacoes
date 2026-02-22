@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sala de Ligações | Igor Carvalhosa</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .bg-matte { background-color: #121212; }
+        
+        .glass {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .neon-border {
+            position: relative;
+        }
+        .neon-border::after {
+            content: '';
+            position: absolute;
+            inset: -2px;
+            background: linear-gradient(45deg, #0070f3, #39FF14, #0070f3);
+            z-index: -1;
+            filter: blur(10px);
+            opacity: 0.3;
+            border-radius: inherit;
+        }
+
+        .floating {
+            animation: floating 4s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+        }
+
+        .text-gradient {
+            background: linear-gradient(to right, #ffffff, #0070f3);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Floating CTA Mobile -->
+    <div class="fixed bottom-6 inset-x-6 z-50 md:hidden">
+        <a href="#precos" class="block w-full bg-blue-600 text-white text-center font-bold py-4 rounded-2xl shadow-[0_0_20px_rgba(0,112,243,0.5)]">
+            GARANTIR MEU ACESSO
+        </a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-20 pb-12 px-6 overflow-hidden">
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full overflow-hidden -z-10">
+            <div class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px]"></div>
+            <div class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-green-500/10 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass mb-8 animate-pulse">
+                <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+                <span class="text-xs font-bold tracking-widest uppercase text-green-400">Ao vivo toda terça às 14h30</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-8xl font-extrabold leading-tight mb-8">
+                Aprenda a prospectar por <span class="text-gradient">osmose.</span>
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
+                Entre na minha sala, ouça minhas ligações no viva-voz e veja como eu gero oportunidades de negócios reais em tempo real.
+            </p>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <a href="#precos" class="group relative px-10 py-5 bg-blue-600 rounded-2xl font-bold text-xl overflow-hidden transition-all hover:scale-105">
+                    <span class="relative z-10">QUERO ENTRAR NA SALA</span>
+                    <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-blue-700 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                </a>
+                <a href="#como-funciona" class="px-10 py-5 glass rounded-2xl font-bold text-xl hover:bg-white/10 transition-all">
+                    Ver como funciona
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section id="como-funciona" class="py-24 px-6 relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl md:text-5xl font-bold mb-4">O que te impede de <span class="text-blue-500">vender mais?</span></h2>
+                <p class="text-gray-500">Três problemas que matam sua operação comercial todos os dias.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Prob 1 -->
+                <div class="glass p-10 rounded-3xl reveal" style="transition-delay: 100ms;">
+                    <div class="w-14 h-14 bg-red-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="phone-off" class="text-red-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Inércia da Discagem</h3>
+                    <p class="text-gray-400 leading-relaxed">O medo de ouvir o "não" faz você procrastinar a primeira ligação até o fim do dia. O resultado? Zero novos clientes.</p>
+                </div>
+                <!-- Prob 2 -->
+                <div class="glass p-10 rounded-3xl reveal" style="transition-delay: 200ms;">
+                    <div class="w-14 h-14 bg-blue-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="message-square-x" class="text-blue-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Scripts Robóticos</h3>
+                    <p class="text-gray-400 leading-relaxed">Você usa textos prontos que não conectam. O cliente percebe em 3 segundos que é uma venda e desliga na sua cara.</p>
+                </div>
+                <!-- Prob 3 -->
+                <div class="glass p-10 rounded-3xl reveal" style="transition-delay: 300ms;">
+                    <div class="w-14 h-14 bg-green-500/20 rounded-2xl flex items-center justify-center mb-6">
+                        <i data-lucide="trending-down" class="text-green-500"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Falta de Volume</h3>
+                    <p class="text-gray-400 leading-relaxed">Você acredita que vender é sorte porque faz poucas tentativas. Sem volume, não há estatística. Sem estatística, não há lucro.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution / Osmosis Section -->
+    <section class="py-24 px-6 bg-matte relative overflow-hidden">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+            <div class="md:w-1/2 reveal">
+                <div class="inline-block px-4 py-1 rounded-full border border-blue-500/50 text-blue-400 text-sm font-bold mb-6 italic">A MINHA SOLUÇÃO</div>
+                <h2 class="text-4xl md:text-6xl font-extrabold mb-8 leading-tight">Aprender por <br><span class="text-blue-500">Exemplo Prático.</span></h2>
+                <p class="text-gray-400 text-lg mb-8">
+                    Não é um curso. É uma <strong>experiência imersiva</strong>. Você vai entrar no meu campo de batalha. Enquanto eu ligo para empresas reais, você ouve tudo. 
+                </p>
+                <ul class="space-y-4">
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i>
+                        <span>Manejo de objeções em tempo real</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i>
+                        <span>Tom de voz e autoridade imediata</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <i data-lucide="check-circle-2" class="text-green-500 w-5 h-5"></i>
+                        <span>Estratégias para passar pelo filtro da secretária</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="md:w-1/2 relative reveal">
+                <div class="glass p-8 rounded-[40px] neon-border floating">
+                    <div class="aspect-video bg-black/40 rounded-2xl flex items-center justify-center relative overflow-hidden">
+                        <div class="absolute inset-0 bg-blue-600/10 animate-pulse"></div>
+                        <i data-lucide="mic" class="w-16 h-16 text-blue-500"></i>
+                        <div class="absolute bottom-4 left-4 flex items-center gap-2">
+                            <span class="w-3 h-3 bg-red-600 rounded-full animate-ping"></span>
+                            <span class="text-xs font-bold uppercase tracking-widest">LIVE CALL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bio Section -->
+    <section class="py-24 px-6">
+        <div class="max-w-4xl mx-auto text-center reveal">
+            <h2 class="text-3xl md:text-5xl font-bold mb-12">Quem vai te guiar?</h2>
+            <div class="mb-10 inline-block p-1 bg-gradient-to-b from-blue-500 to-transparent rounded-full">
+                <!-- Image placed here -->
+                <div class="w-32 h-32 md:w-48 md:h-48 rounded-full bg-matte border-4 border-black flex items-center justify-center overflow-hidden">
+                    <img src="https://imgur.com/r6Ol8cX.png" alt="Igor Carvalhosa" class="w-full h-full object-cover">
+                </div>
+            </div>
+            <h3 class="text-3xl font-extrabold mb-4">Igor Carvalhosa</h3>
+            <p class="text-blue-500 font-bold mb-8 uppercase tracking-widest">Empresário | Pai | Ex-Militar</p>
+            <p class="text-gray-400 text-lg leading-relaxed mb-8">
+                De militar da Marinha a executivo de vendas. Lidero um time que executa <strong>+2.000 ligações diárias</strong> e realizo mais de 100 atendimentos por mês. Minha missão é simples: te mostrar o que o "vendedor de curso" tem medo de fazer — ligar ao vivo. Tudo isso para a Glória de Deus.
+            </p>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="precos" class="py-24 px-6 bg-black relative">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-4xl md:text-6xl font-black mb-4 italic uppercase">Escolha sua <span class="text-blue-600">dose.</span></h2>
+                <p class="text-gray-500">O ingresso avulso custa caro para te mostrar que o Plano Anual é o único caminho.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-stretch">
+                <!-- Single -->
+                <div class="glass p-12 rounded-[40px] flex flex-col reveal" style="transition-delay: 100ms;">
+                    <span class="text-gray-500 font-bold mb-4 uppercase tracking-tighter">Degustação</span>
+                    <h3 class="text-3xl font-bold mb-6">Ingresso Único</h3>
+                    <p class="text-gray-400 mb-8">Ideal para quem quer apenas espiar uma única vez como o jogo funciona.</p>
+                    <div class="mt-auto">
+                        <div class="text-5xl font-black mb-8">R$ 200</div>
+                        <a href="#" class="block w-full py-5 border border-white/20 rounded-2xl text-center font-bold hover:bg-white hover:text-black transition-all">COMPRAR UMA AULA</a>
+                    </div>
+                </div>
+
+                <!-- Annual -->
+                <div class="relative p-12 rounded-[40px] bg-blue-600 flex flex-col reveal neon-border" style="transition-delay: 200ms;">
+                    <div class="absolute -top-5 right-10 bg-green-500 text-black px-6 py-2 rounded-full font-black text-xs uppercase tracking-widest shadow-xl">Recomendado</div>
+                    <span class="text-blue-100 font-bold mb-4 uppercase tracking-tighter">Acesso Total</span>
+                    <h3 class="text-3xl font-bold mb-6 text-white italic underline">Passaporte Anual</h3>
+                    <p class="text-blue-100 mb-8 font-medium">Acesso a TODAS as salas de todas as terças-feiras do ano. Networking e aprendizado contínuo.</p>
+                    <div class="mt-auto">
+                        <div class="flex items-baseline gap-2 mb-2">
+                            <span class="text-blue-200 line-through text-lg italic">R$ 10.400,00</span>
+                        </div>
+                        <div class="text-6xl font-black mb-2 italic">R$ 1.997</div>
+                        <p class="text-blue-100 font-bold mb-8 italic">Apenas R$ 49,00 por sala!</p>
+                        <a href="#" class="block w-full py-6 bg-white text-blue-600 rounded-2xl text-center font-black text-xl shadow-2xl hover:scale-105 transition-all">GARANTIR ANO INTEIRO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-white/5 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="text-left">
+                <span class="text-xl font-black italic">IGOR <span class="text-blue-500">CARVALHOSA</span></span>
+                <p class="text-sm text-gray-600 mt-2 italic">Dominando a arte da prospecção ativa.</p>
+            </div>
+            <div class="text-gray-500 text-sm italic">
+                Para a Glória de Deus. © 2026 Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Scroll Reveal Animation
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+    </script>
+</body>
+</html>
